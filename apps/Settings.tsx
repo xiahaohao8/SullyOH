@@ -496,6 +496,18 @@ const Settings: React.FC = () => {
   const [localVisionUrl, setLocalVisionUrl] = useState(apiConfig.visionApi?.baseUrl || '');
   const [localVisionKey, setLocalVisionKey] = useState(apiConfig.visionApi?.apiKey || '');
   const [localVisionModel, setLocalVisionModel] = useState(apiConfig.visionApi?.model || '');
+  const [localImageGenerationEnabled, setLocalImageGenerationEnabled] = useState(
+  apiConfig.imageGeneration?.enabled === true
+  );
+  const [localImageGenerationUrl, setLocalImageGenerationUrl] = useState(
+  apiConfig.imageGeneration?.baseUrl || ''
+  );
+  const [localImageGenerationKey, setLocalImageGenerationKey] = useState(
+  apiConfig.imageGeneration?.apiKey || ''
+  );
+  const [localImageGenerationModel, setLocalImageGenerationModel] = useState(
+  apiConfig.imageGeneration?.model || ''
+  );
   const [availableVisionModels, setAvailableVisionModels] = useState<string[]>(readStoredVisionModels);
   const [selectedVisionPresetId, setSelectedVisionPresetId] = useState<string | null>(null);
   const [visionStatusMsg, setVisionStatusMsg] = useState('');

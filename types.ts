@@ -259,6 +259,17 @@ export interface VisionApiConfig {
   model: string;
 }
 
+export interface ImageGenerationConfig{
+  /** 是否启用图片生成能力 */
+  enabled:boolean;
+  /** 图片生成API的Base URL */
+  baseUrl:string;
+  /** 图片生成API Key */
+  apiKey:string;
+  /** 图片生成模型 */
+  model:string;
+}
+
 export interface APIConfig {
   baseUrl: string;
   apiKey: string;

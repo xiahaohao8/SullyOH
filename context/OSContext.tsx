@@ -626,6 +626,13 @@ const defaultApiConfig: APIConfig = {
     apiKey: '',
     model: '',
   },
+  imageGeneration: {
+    enabled: false,
+    baseUrl: '',
+    apiKey: '',
+    model: '',
+  },
+
   minimaxApiKey: '',
   minimaxGroupId: '',
   minimaxRegion: 'domestic',

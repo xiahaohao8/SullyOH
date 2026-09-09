@@ -1160,14 +1160,13 @@ const Settings: React.FC = () => {
     setTimeout(() => setVisionStatusMsg(''), 2200);
   };
 
-    const handleSaveImageGeneration = () => {
+  const handleSaveImageGeneration = () => {
     const nextImageGeneration = {
       enabled: localImageGenerationEnabled,
       baseUrl: normalizeApiBaseUrl(localImageGenerationUrl),
       apiKey: normalizeApiCredential(localImageGenerationKey),
       model: normalizeApiModel(localImageGenerationModel),
     };
-
     if (
       nextImageGeneration.enabled &&
       (!nextImageGeneration.baseUrl ||
@@ -1177,19 +1176,14 @@ const Settings: React.FC = () => {
       addToast('开启生图 API 前，请填写完整的 URL、Key 和 Model', 'error');
       return;
     }
-
     setLocalImageGenerationUrl(nextImageGeneration.baseUrl);
     setLocalImageGenerationKey(nextImageGeneration.apiKey);
     setLocalImageGenerationModel(nextImageGeneration.model);
-
-    updateApiConfig({
-      imageGeneration: nextImageGeneration,
+    updateApiConfig({ imageGeneration: nextImageGeneration,
     });
-
     addToast(
       nextImageGeneration.enabled ? '生图 API 已接入' : '生图 API 已关闭',
-      'success'
-    );
+      'success');
   };
 
   const loadVisionApiPreset = (preset: typeof apiPresets[0]) => {

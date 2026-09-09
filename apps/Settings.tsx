@@ -941,6 +941,17 @@ const Settings: React.FC = () => {
   }, [apiConfig.visionApi?.enabled, apiConfig.visionApi?.baseUrl, apiConfig.visionApi?.apiKey, apiConfig.visionApi?.model]);
 
   useEffect(() => {
+      setLocalImageGenerationEnabled(apiConfig.imageGeneration?.enabled === true);
+      setLocalImageGenerationUrl(apiConfig.imageGeneration?.baseUrl || '');
+      setLocalImageGenerationKey(apiConfig.imageGeneration?.apiKey || '');
+      setLocalImageGenerationModel(apiConfig.imageGeneration?.model || '');
+  }, [
+      apiConfig.imageGeneration?.enabled,
+      apiConfig.imageGeneration?.baseUrl,
+      apiConfig.imageGeneration?.apiKey,
+      apiConfig.imageGeneration?.model,]);
+
+  useEffect(() => {
       setLocalMiniMaxKey(apiConfig.minimaxApiKey || '');
       setLocalMiniMaxGroupId(apiConfig.minimaxGroupId || '');
       setLocalMiniMaxRegion(apiConfig.minimaxRegion === 'overseas' ? 'overseas' : 'domestic');

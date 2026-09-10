@@ -62,3 +62,23 @@ export async function generateImage(
 
   throw new Error('无法识别图片生成 API 返回的数据');
 }
+
+export const IMAGE_GENERATION_TOOL = {
+  type: 'function',
+  function: {
+    name: 'generate_image',
+    description:
+      '当你认为当前对话适合用图片表达时，自主生成一张图片。可以用于分享角色此刻看到的画面、正在做的事情、场景、人物状态或其他适合视觉表达的内容。不要在不需要图片时强行调用。',
+    parameters: {
+      type: 'object',
+      properties: {
+        prompt: {
+          type: 'string',
+          description: '要生成的图片内容，使用详细、具体、可视化的描述。',
+        },
+      },
+      required: ['prompt'],
+      additionalProperties: false,
+    },
+  },
+} as const;

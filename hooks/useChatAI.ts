@@ -52,6 +52,7 @@ import { announceInstantChatRoute, getInstantChatPending, resolveInstantChatRead
 import { INSTANT_TOTAL_TIMEOUT_MS } from '../worker/amsg/src/instantChat';
 import { appendInstantTraceEntry } from '../utils/instantTraceLog';
 import { AMSG2_TOOLS, AMSG2_TOOL_NAMES, createAmsg2ToolSession, executeAmsg2Tool, isAmsg2GlobalReady } from '../utils/amsg2ToolBridge';
+import { IMAGE_GENERATION_TOOL, generateImage } from '../utils/imageGeneration';
 import { shouldSendThinkingParams } from '../utils/thinkingGate';
 import { buildClaudeProxyCompatibilityBody, shouldRetryClaudeProxyCompatibility } from '../utils/claudeProxyCompat';
 import { routeMiniAppToolCall } from '../utils/miniAppToolRoute';

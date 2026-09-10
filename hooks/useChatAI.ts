@@ -1223,6 +1223,10 @@ export const useChatAI = ({
             if (amsg2ToolsInjected) {
                 baseReqBody.tools = [...(baseReqBody.tools || []), ...AMSG2_TOOLS];
                 if (!baseReqBody.tool_choice) baseReqBody.tool_choice = 'auto';
+            }
+             // AI 自主生图工具：常驻能力，和其他工具共存
+                baseReqBody.tools = [...(baseReqBody.tools || []), IMAGE_GENERATION_TOOL];
+             if (!baseReqBody.tool_choice) baseReqBody.tool_choice = 'auto';
                 try {
                     // 回执这半边是「检出 + 落台账」的结果，带副作用，一轮只算一次；
                     // 进行中任务那半边每次发请求现取（见下面的 withAmsg2TaskContext）。
